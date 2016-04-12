@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.0.0.rc2'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'record_tag_helper', '~> 1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
