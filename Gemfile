@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.beta3', '< 5.1'
+gem 'rails', '= 5.0.0.beta3', '< 5.1'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
+
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.x'
@@ -39,7 +40,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg',             '0.18.4'
+  gem 'mongoid', :git => 'https://github.com/xzgyb/mongoid-for-rails5.git'
   gem 'rails_12factor', '0.0.2'
 end
 
