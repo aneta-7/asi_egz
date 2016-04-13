@@ -21,3 +21,50 @@
 
 en:
   hello: "Hello world"
+  datetime:
+    distance_in_words:
+      half_a_minute: "half a minute"
+      less_than_x_seconds:
+        # The defaults are "less than a second" and "less than %{count} seconds"
+        one:   "mniej niż sekundę temu"
+        other: "mniej niż %{count} sek. temu"
+      x_seconds:
+        # The defaults are "less than a second" and "less than %{count} seconds"
+        one:   "sekundę temu"
+        other: "%{count} sek. temu"
+      less_than_x_minutes:
+        # The defaults are "less than a minute" and "less than %{count} minutes"
+        one:   "mniej niż minutę temu"
+        other: "mniej niż %{count} min. temu"
+      x_minutes:
+        # The defaults are "about 1 minute" and "about %{count} minutes"
+        one:   "minutę temu"
+        other: "%{count} min. temu"
+      about_x_hours:
+      # The defaults are "about 1 hour" and "about %{count} hours"
+        one:   "godzinę temu"
+        other: "%{count} godz. temu"
+      x_days:
+      # The defaults are "1 day" and "%{count} days"
+        one:   "dzień temu"
+        other: "%{count} dni temu"
+      about_x_months:
+      # The defaults are "about 1 month" and "about %{count} months"
+        one:   "miesiąc temu"
+        other: "%{count} mies. temu"
+      x_months:
+      # The defaults are "1 month" and "%{count} months"
+        one:   "miesiąc temu"
+        other: "%{count} mies. temu"
+      about_x_years:
+      # The defaults are "about 1 year" and "about %{count} years"
+        one:   "rok temu"
+        other: "%{count} l. temu"
+      over_x_years:
+      # The defaults are "over 1 year" and "over %{count} years"
+        one:   "ponad rok temu"
+        other: "ponad %{count} l. temu"
+      almost_x_years:
+      # The defaults are "almost 1 year" and "almost %{count} years"
+        one:   "prawie rok temu"
+        other: "prawie %{count} l. temu"
