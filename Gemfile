@@ -35,6 +35,7 @@ gem 'record_tag_helper', '~> 1.0'
 # gem 'capistrano-rails', group: :development
 gem 'faker'
 gem 'will_paginate', '~> 3.1.0'
+gem 'statistics2'
 
 group :development, :test do
   gem 'byebug'
