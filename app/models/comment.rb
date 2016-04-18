@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
   belongs_to :user
-  belongs_to :lin
+  belongs_to :link
 end

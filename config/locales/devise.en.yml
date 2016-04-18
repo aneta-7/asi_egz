@@ -58,5 +58,5 @@ en:
       not_found: "nie znaleziono"
       not_locked: "nie był zamknięty"
       not_saved:
-        one: "1 błąd zabronione %{resource} z zasobów zapisywane:"
-        other: "%{count} błędy tego zabrania %{resource} były zapisywane:"
+        one: "%{resource} nie został zachowany z powodu jednego błędu:"
+        other: "%{resource} nie został zachowany z powodu %{count} błędów"
