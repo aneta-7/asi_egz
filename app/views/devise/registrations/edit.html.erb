@@ -11,12 +11,12 @@
 
      <div class="form-group">
         <%= f.label "Login" %>
-        <%= f.text_field :name, class: "form-control", :autofocus => true %>
+        <%= f.text_field :name, class: "form-control", :autofocus => true, required: true %>
       </div>
 
       <div class="form-group">
         <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
+        <%= f.email_field :email, class: "form-control", required: true%>
       </div>
 
       <div class="form-group">
@@ -26,7 +26,7 @@
 
       <div class="form-group">
         <%= f.label "Aktualne hasła" %>
-        <%= f.password_field :current_password, class: "form-control" , placeholder: "Wpisz aktualne hasło, aby potwierdzić zmiany" %>
+        <%= f.password_field :current_password, class: "form-control" , placeholder: "Wpisz aktualne hasło, aby potwierdzić zmiany", required: true %>
       </div>
 
       </div>

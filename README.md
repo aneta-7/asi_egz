@@ -10,7 +10,6 @@
  - Michał Tyczyński
  
 3. Do poprawy:
- - walidacja danych
  - dodanie paginacji
  - wyglad strony 
 
