@@ -13,5 +13,5 @@ class Link < ActiveRecord::Base
     end
     
       validates :title, :url, presence: true
-      validates :url, format: { with: /((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?/, message: "jest niewłaściwy" }
+      validates :url, format: { with: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)?/, message: "jest niewłaściwy" }
 end
