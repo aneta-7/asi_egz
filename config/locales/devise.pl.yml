@@ -4,7 +4,11 @@ pl:
       not_found: "nie znaleziono"
       already_confirmed: "już został aktywowany"
       not_locked: "nie był zablokowany"
-
+      not_saved:
+        few: "Użytkownik nie został zachowany z powodu %{count} błędów"
+        many: "Użytkownik nie został zachowany z powodu %{count} błędów"
+        one: "Użytkownik nie został zachowany z powodu jednego błędu"
+        other: "Użytkownik nie został zachowany z powodu %{count} błędów"
   devise:
     failure:
       unauthenticated: 'Musisz się zalogować lub zarejestrować aby kontynuować.'
