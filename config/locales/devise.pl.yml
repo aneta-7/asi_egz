@@ -23,17 +23,17 @@ pl:
       signed_out: 'Użytkownik został wylogowany.'
     passwords:
       send_instructions: 'Wkrótce powinieneś otrzymać email z instrukcją jak ustawić nowe hasło.'
-      updated: 'Twoje hasło zostało zmienione. Jesteś już zalogowany.'
+      updated: 'Twoje hasło zostało zmienione.'
     confirmations:
       send_instructions: 'Wkrótce powinieneś otrzymać email z instrukcją jak aktywować swoje konto.'
-      confirmed: 'Twoje konto zostało aktywowane. Jesteś już zalogowany.'
+      confirmed: 'Twoje konto zostało aktywowane.'
     registrations:
-      signed_up: 'Rejestracja zakończyła się sukcesem. Link aktywacyjny został wysłany na twój adres e-mail (jeśli włączone).'
+      signed_up: 'Rejestracja zakończyła się sukcesem.'
       updated: 'Twoje konto zostało pomyślnie zaktualizowane.'
       destroyed: 'Papa! Twoje konto zostało usunięte. Mamy nadzieję, że spotkamy się jeszcze kiedyś!'
     unlocks:
       send_instructions: 'Wkrótce powinieneś otrzymać email z instrukcją jak odblokować swoje konto.'
-      unlocked: 'Twoje konto zostało odblokowane. Jesteś już zalogowany.'
+      unlocked: 'Twoje konto zostało odblokowane.'
     mailer:
       confirmation_instructions:
         subject: 'Instrukcja aktywacji konta'
