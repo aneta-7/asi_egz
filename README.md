@@ -1,7 +1,14 @@
 ### Projekt zespołowy WYPOK
 1. Nazwa zespołu: ADHD
- 
-2. Skład:
+
+2. Opis Projektu
+Aplikacja służąca do wstawiania odnośników.
+Daje ona możliwość do oceniania oraz komentowania strony
+przez innych użytkowników. Zawiera ranking najlepszych stron
+według ocen użytkowników, liczona za pomocą wzoru do wyliczania
+wagi głosów.
+
+3. Skład:
  - Monika Beiger
  - Artur Koliński
  - Łukasz Mielewczyk
@@ -9,7 +16,7 @@
  - Maciej Posłuszny
  - Michał Tyczyński
  
-3. Do poprawy:
+4. Do poprawy:
  - dodanie paginacji
  - wygląd strony 
  - poprawić tłumaczenie błędów
@@ -19,9 +26,9 @@
  - możliwośc dodania zdjęć, lub linków
  - dodać sortowanie wg top, daty, tytułu
 
-4. Użycie wzoru do do wyliczania wagi głosów (+/-):
+5. Użycie wzoru do do wyliczania wagi głosów (+/-):
 http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
-5. Informacje:
+6. Informacje:
  
 |Wersja Ruby|Wersja Rails|Baza danych|
 |---|---|---|
