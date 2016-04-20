@@ -30,10 +30,11 @@
 </br></br></br>
 <%= simple_form_for [@link, Comment.new]  do |f| %>
   <div class="field">
-    <%= f.text_area :body, class: "form-control", required: true %>
+    <%= f.text_area :body, class: "form-control", required: true, id: "textKom" %>
   </div>
   <br>
-  <%= f.submit "Dodaj komentarz", class: "btn btn-primary" %>
+  <%= f.submit "Dodaj komentarz", class: "btn btn-primary", id: "buttonKom" %>
+<% end %>
 <% end %>
 
 <h3 class="comments_title">
@@ -51,4 +52,3 @@
 <div id="comments">
   <%= render :partial => @link.comments %>
 </div>
-<% end %>
