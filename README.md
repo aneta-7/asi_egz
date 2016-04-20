@@ -16,7 +16,7 @@ wagi głosów.
  - Maciej Posłuszny
  - Michał Tyczyński
  
-4. Do poprawy, do dodania:
+4. Do poprawy i dodania:
  - dodanie paginacji
  - wygląd strony 
  - wstawić sensowne odnośniki do stron
