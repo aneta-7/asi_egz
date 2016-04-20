@@ -101,22 +101,22 @@ pl:
       x_days:
         few: "%{count} dni"
         many: "%{count} dni"
-        one: 1 dzień
+        one: dzień
         other: "%{count} dni"
       x_minutes:
         few: "%{count} minuty"
         many: "%{count} minut"
-        one: 1 minuta
+        one: minutę
         other: "%{count} minut"
       x_months:
         few: "%{count} miesiące"
         many: "%{count} miesięcy"
-        one: 1 miesiąc
+        one: miesiąc
         other: "%{count} miesięcy"
       x_seconds:
         few: "%{count} sekundy"
         many: "%{count} sekund"
-        one: 1 sekunda
+        one: sekundę
         other: "%{count} sekund"
     prompts:
       day: Dzień

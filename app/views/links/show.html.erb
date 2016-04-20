@@ -26,6 +26,16 @@
 	</div>
 <% end %>
 
+<% if user_signed_in? %>
+</br></br></br>
+<%= simple_form_for [@link, Comment.new]  do |f| %>
+  <div class="field">
+    <%= f.text_area :body, class: "form-control", required: true %>
+  </div>
+  <br>
+  <%= f.submit "Dodaj komentarz", class: "btn btn-primary" %>
+<% end %>
+
 <h3 class="comments_title">
   <%= @link.comments.count %>
   <% if @link.comments.count == 1 %>
@@ -41,12 +51,4 @@
 <div id="comments">
   <%= render :partial => @link.comments %>
 </div>
-  <% if user_signed_in? %>
-<%= simple_form_for [@link, Comment.new]  do |f| %>
-  <div class="field">
-    <%= f.text_area :body, class: "form-control", required: true %>
-  </div>
-  <br>
-  <%= f.submit "Dodaj komentarz", class: "btn btn-primary" %>
-<% end %>
 <% end %>

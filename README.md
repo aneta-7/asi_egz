@@ -16,15 +16,15 @@ wagi głosów.
  - Maciej Posłuszny
  - Michał Tyczyński
  
-4. Do poprawy:
+4. Do poprawy, do dodania:
  - dodanie paginacji
  - wygląd strony 
- - poprawić tłumaczenie błędów
  - wstawić sensowne odnośniki do stron
- - inne dodatki związane z dodawaniem komentarzy (emotikony, pogrubienia, podkreślenia)
+ - inne dodatki związane z dodawaniem komentarzy (pogrubienia, podkreślenia)
  - logowanie przez fecabooka lub inną witrynę
  - możliwośc dodania zdjęć, lub linków
  - dodać sortowanie wg top, daty, tytułu
+ - hashtag
 
 5. Użycie wzoru do do wyliczania wagi głosów (+/-):
 http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
