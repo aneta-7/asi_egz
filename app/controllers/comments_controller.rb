@@ -6,8 +6,7 @@ class CommentsController < ApplicationController
   def create
     @link = Link.find(params[:link_id])
     @comment = @link.comments.new(comment_params)
-    #comment_params[:body] = emojify(comment_params[:body])
-    #@comment.update_attributes(comment_params)
+    @comment.body = emojify(@comment.body)
     @comment.user = current_user
 
     respond_to do |format|
@@ -36,9 +35,6 @@ class CommentsController < ApplicationController
     def set_comment
       @comment = Comment.find(params[:id])
     end
-    
-    # params[:content] = emojify(params[:content])
-    # resource.update_attributes(params)
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params

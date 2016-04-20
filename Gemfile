@@ -37,7 +37,6 @@ gem 'record_tag_helper', '~> 1.0'
 gem 'faker'
 gem 'will_paginate', '~> 3.1.0'
 gem 'statistics2'
-# emoticons
 gem 'gemoji'
 
 group :development, :test do
