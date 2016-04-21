@@ -1,5 +1,6 @@
 class Link < ActiveRecord::Base
     acts_as_votable
+    include SimpleHashtag::Hashtaggable
     belongs_to :user
     has_many :comments, :dependent => :delete_all
     

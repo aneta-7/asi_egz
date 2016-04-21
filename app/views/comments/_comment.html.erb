@@ -6,7 +6,7 @@
 		</div>
 
 		<div class="btn-group pull-right">
-			<% if comment.user == current_user -%>
+			<% if comment.user == current_user &&  !@hashtagged %>
 				<%= link_to '',[@link, comment], method: :delete, data: { confirm: 'Na pewno?' }, class: "btn btn-xs btn-danger btn-circle btn-outline glyphicon glyphicon-remove" %>
 			<% end %>
 		</div>
