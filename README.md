@@ -24,7 +24,6 @@ wagi głosów.
  - logowanie przez fecabooka lub inną witrynę
  - możliwośc dodania zdjęć, lub linków
  - dodać sortowanie wg top, daty, tytułu
- - hashtag
 
 5. Użycie wzoru do do wyliczania wagi głosów (+/-):
 http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
