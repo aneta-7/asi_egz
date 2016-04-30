@@ -16,6 +16,7 @@
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 #logo {
 	font-size: 26px;
@@ -124,4 +125,16 @@
 .btn-warning.btn-outline:hover,
 .btn-danger.btn-outline:hover {
     color: #fff;
+}
+
+.prawo{
+    float: right;
+}
+
+.emoty{
+    font-size: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 5px;
+    padding-right: 5px;
 }

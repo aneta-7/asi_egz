@@ -39,6 +39,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'statistics2'
 gem 'gemoji'
 gem 'simple_hashtag'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'

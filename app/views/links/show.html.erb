@@ -30,23 +30,25 @@
 </br></br></br>
 <%= simple_form_for [@link, Comment.new]  do |f| %>
   <div class="field">
-    <%= f.text_area :body, class: "form-control", required: true, id: "textKom" %>
+    <%= f.text_area :body, class: "form-control", required: true %>
   </div>
   <br>
-  <%= f.submit "Dodaj komentarz", class: "btn btn-primary", id: "buttonKom" %>
-  <a class="btn btn-primary" href="http://www.emoji-cheat-sheet.com/" target="_blank"> Emotikony </a>
+  <div>
+    <%= f.submit "Dodaj komentarz", class: "btn btn-primary" %>
+    <a class="btn btn-default emoty prawo" href="http://www.emoji-cheat-sheet.com/" target="_blank"><span class="fa fa-smile-o"></span></a>
+  </div>
 <% end %>
 <% end %>
 
 <h3 class="comments_title">
   <%= @link.comments.count %>
-  <% if @link.comments.count == 1 %>
+  <% if @link.comments.count === 1 %>
   komentarz
   <% end %>
-  <% if @link.comments.count == 2 || @link.comments.count == 3 || @link.comments.count == 4 %>
+  <% if @link.comments.count === 2 || @link.comments.count === 3 || @link.comments.count === 4 %>
   komentarze
   <% end %>
-  <% if @link.comments.count == 0 || @link.comments.count >= 5 %>
+  <% if @link.comments.count === 0 || @link.comments.count >= 5 %>
   komentarzy
   <% end %>
 </h3>
