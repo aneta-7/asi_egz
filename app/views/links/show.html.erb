@@ -8,11 +8,11 @@
 
 <div class="btn-group pull-right">
   <% if user_signed_in? %>
-  <%= link_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+  <%= link_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm btn-outline " do %>
     <span class="glyphicon glyphicon-thumbs-up"></span>
     <%= @link.get_upvotes.size %>
   <% end %>
-  <%= link_to dislike_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+  <%= link_to dislike_link_path(@link), method: :put, class: "btn btn-default btn-sm btn-outline " do %>
     <span class="glyphicon glyphicon-thumbs-down"></span>
     <%= @link.get_downvotes.size %>
   <% end %>
@@ -21,8 +21,8 @@
 
 <% if @link.user == current_user -%>
 	<div class="btn-group">
-		<%= link_to '', edit_link_path(@link), class: "btn btn-default glyphicon glyphicon-pencil", title: "Edytuj" %>
-		<%= link_to '', @link, method: :delete, data: { confirm: 'Na pewno?' }, class: "btn btn-default glyphicon glyphicon-trash", title: "Usuń"  %>
+		<%= link_to '', edit_link_path(@link), class: "btn btn-default glyphicon glyphicon-pencil btn-outline", title: "Edytuj" %>
+		<%= link_to '', @link, method: :delete, data: { confirm: 'Na pewno?' }, class: "btn btn-default glyphicon glyphicon-trash btn-outline", title: "Usuń"  %>
 	</div>
 <% end %>
 
@@ -37,7 +37,7 @@
     <li><%= f.submit "Dodaj komentarz", class: "btn btn-primary" %></li>
   </ul>
   <ul class="nav navbar-nav pull-right">
-    <li><div class= "przycisk"><a class="btn btn-default rozmiar" href="http://www.emoji-cheat-sheet.com/" target="_blank" title="Dostępne emotikony"><span class="fa fa-smile-o"></span></a></div></li>
+    <li><div class= "przycisk"><a class="btn btn-default btn-outline rozmiar" href="http://www.emoji-cheat-sheet.com/" target="_blank" title="Dostępne emotikony"><span class="fa fa-smile-o"></span></a></div></li>
   </ul>
 <% end %>
 <% end %>

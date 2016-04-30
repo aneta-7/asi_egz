@@ -1,8 +1,13 @@
-<h1><%= params[:hashtag] %></h1>
+<ul class="nav navbar-nav pull-right">
+    <li><div class = "przycisk"><%= link_to '', hashtags_path, class: "btn btn-default btn-outline glyphicon glyphicon-tags", title: "Hasztagi" %></div></li>
+</ul>
+<h1  class='text-center'><%= params[:hashtag] %></h1>
 <% if @hashtagged %>
+<div id="comments">
   <% @hashtagged.each do |hashtagged| %>
     <%= render_hashtaggable hashtagged %>
   <% end -%>
+</div>
 <% else -%>
-  <p>Brak wyników dla <em><%= params[:hashtag] %></em> hashtag.</p>
+  <p>Brak wyników dla <em><%= params[:hashtag] %></em></p>
 <% end -%>

@@ -1,5 +1,5 @@
 <ul class="nav navbar-nav pull-right">
-    <li><div class = "przycisk"><%= link_to '', hashtags_path, class: "btn btn-default glyphicon glyphicon-tags", title: "Hasztagi" %></div></li>
+    <li><div class = "przycisk"><%= link_to '', hashtags_path, class: "btn btn-default btn-outline glyphicon glyphicon-tags", title: "Hasztagi" %></div></li>
 </ul>
 <% @links.each do |link| %>
   <div class="link row clearfix">
@@ -9,13 +9,13 @@
     </h2>
 
     <div class="btn-group">
-      <a class="btn btn-default btn-sm" href="<%= link.url %>" target="_blank">Odwiedź link</a>
+      <a class="btn btn-default btn-sm btn-outline" href="<%= link.url %>" target="_blank">Odwiedź link</a>
       <% if user_signed_in? %>
-      <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
+      <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
         <span class="glyphicon glyphicon-thumbs-up"></span>
         <%= link.get_upvotes.size %>
       <% end %>
-      <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
+      <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
         <span class="glyphicon glyphicon-thumbs-down"></span>
         <%= link.get_downvotes.size %>
       <% end %>

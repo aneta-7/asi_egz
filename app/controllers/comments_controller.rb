@@ -2,13 +2,14 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
   include EmojiHelper
-  
+  include HashtagsHelper
+ 
   def create
     @link = Link.find(params[:link_id])
     @comment = @link.comments.new(comment_params)
     @comment.body = emojify(@comment.body)
+    @comment.body = linkify_hashtags(@comment.body)
     @comment.user = current_user
-
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @link, notice: 'Komentarz został  dodany.' }
