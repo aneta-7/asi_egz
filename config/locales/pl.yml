@@ -65,7 +65,7 @@ pl:
       about_x_hours:
         few: około %{count} godziny
         many: około %{count} godzin
-        one: około godziny
+        one: około godzinę
         other: około %{count} godzin
       about_x_months:
         few: około %{count} miesiące

@@ -13,6 +13,7 @@ pl:
     failure:
       unauthenticated: 'Musisz się zalogować lub zarejestrować aby kontynuować.'
       unconfirmed: 'Musisz najpierw aktywować swoje konto aby kontynuować.'
+      not_found_in_database: 'Niepoprawny email lub hasło.'
       locked: 'Twoje konto jest zablokowane.'
       invalid: 'Niepoprawny email lub hasło.'
       invalid_token: 'Niepoprawny token autentykujący.'

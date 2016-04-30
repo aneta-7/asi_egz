@@ -9,11 +9,11 @@
 <div class="btn-group pull-right">
   <% if user_signed_in? %>
   <%= link_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
-    <span class="glyphicon glyphicon-chevron-up"></span>
+    <span class="glyphicon glyphicon-thumbs-up"></span>
     <%= @link.get_upvotes.size %>
   <% end %>
   <%= link_to dislike_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
-    <span class="glyphicon glyphicon-chevron-down"></span>
+    <span class="glyphicon glyphicon-thumbs-down"></span>
     <%= @link.get_downvotes.size %>
   <% end %>
   <% end %>
@@ -21,8 +21,8 @@
 
 <% if @link.user == current_user -%>
 	<div class="btn-group">
-		<%= link_to 'Edytuj', edit_link_path(@link), class: "btn btn-default" %>
-		<%= link_to 'Usuń', @link, method: :delete, data: { confirm: 'Na pewno?' }, class: "btn btn-default" %>
+		<%= link_to '', edit_link_path(@link), class: "btn btn-default glyphicon glyphicon-pencil", title: "Edytuj" %>
+		<%= link_to '', @link, method: :delete, data: { confirm: 'Na pewno?' }, class: "btn btn-default glyphicon glyphicon-trash", title: "Usuń"  %>
 	</div>
 <% end %>
 
@@ -33,10 +33,12 @@
     <%= f.text_area :body, class: "form-control", required: true %>
   </div>
   <br>
-  <div>
-    <%= f.submit "Dodaj komentarz", class: "btn btn-primary" %>
-    <a class="btn btn-default emoty prawo" href="http://www.emoji-cheat-sheet.com/" target="_blank"><span class="fa fa-smile-o"></span></a>
-  </div>
+  <ul class="nav navbar-nav pull-left">
+    <li><%= f.submit "Dodaj komentarz", class: "btn btn-primary" %></li>
+  </ul>
+  <ul class="nav navbar-nav pull-right">
+    <li><div class= "przycisk"><a class="btn btn-default rozmiar" href="http://www.emoji-cheat-sheet.com/" target="_blank" title="Dostępne emotikony"><span class="fa fa-smile-o"></span></a></div></li>
+  </ul>
 <% end %>
 <% end %>
 

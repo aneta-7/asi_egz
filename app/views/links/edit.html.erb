@@ -3,4 +3,6 @@
 <%= render 'form', link: @link %>
 
 <!-- <%= link_to 'Show', @link %> | -->
-<%= link_to 'Wróć', links_path %>
+<ul class="nav navbar-nav pull-left">
+    <li><div class = "przycisk"><%= link_to '', links_path, class: "btn btn-default fa fa-reply rozmiar", title: "Wróć" %></div></li>
+</ul>
