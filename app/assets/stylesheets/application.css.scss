@@ -133,6 +133,13 @@
     padding-bottom: 5%;
 }
 
+.rozmiar2{
+    font-size: 20px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 20%;
+}
+
 .przycisk{
     padding: 0;
 }
@@ -167,4 +174,12 @@
 .hasztagi{
 	list-style-type: none;
 	margin-left: -5%;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.strike{
+    text-decoration: line-through;
 }

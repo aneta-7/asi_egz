@@ -1,3 +1,28 @@
+<script>
+		$(document).ready(function()
+		{
+		    $("#b").click(function(){
+		      var text = document.getElementById("kom");
+		      text.value = text.value.substring(0, text.selectionStart) +
+		      '[b]'+text.value.substring(text.selectionStart, text.selectionEnd)+'[/b]'+text.value.substring(text.selectionEnd);
+        });
+        $("#i").click(function(){
+		      var text = document.getElementById("kom");
+		      text.value = text.value.substring(0, text.selectionStart) +
+		      '[i]'+text.value.substring(text.selectionStart, text.selectionEnd)+'[/i]'+text.value.substring(text.selectionEnd);
+        });
+        $("#u").click(function(){
+		      var text = document.getElementById("kom");
+		      text.value = text.value.substring(0, text.selectionStart) +
+		      '[u]'+text.value.substring(text.selectionStart, text.selectionEnd)+'[/u]'+text.value.substring(text.selectionEnd);
+        });
+          $("#s").click(function(){
+		      var text = document.getElementById("kom");
+		      text.value = text.value.substring(0, text.selectionStart) +
+		      '[s]'+text.value.substring(text.selectionStart, text.selectionEnd)+'[/s]'+text.value.substring(text.selectionEnd);
+        });
+		});
+	</script>
 <ul class="nav navbar-nav pull-right">
     <li><div class = "przycisk"><%= link_to '', links_path, class: "btn btn-default btn-outline fa fa-reply ", title: "Wróć" %></div></li>
 </ul>
@@ -34,14 +59,20 @@
 </br></br></br>
 <%= simple_form_for [@link, Comment.new]  do |f| %>
   <div class="field">
-    <%= f.text_area :body, class: "form-control", required: true %>
+    <%= f.text_area :body, id: "kom", class: "form-control", required: true %>
   </div>
   <br>
   <ul class="nav navbar-nav pull-left">
-    <li><%= f.submit "Dodaj komentarz", class: "btn btn-primary" %></li>
+    <li><%= f.submit "Dodaj komentarz", class: "btn btn-primary", title: "Dodaj komentarz" %></li>
   </ul>
   <ul class="nav navbar-nav pull-right">
-    <li><div class= "przycisk"><a class="btn btn-default btn-outline rozmiar" href="http://www.emoji-cheat-sheet.com/" target="_blank" title="Dostępne emotikony"><span class="fa fa-smile-o"></span></a></div></li>
+    <li><div class= "btn-group">
+      <a id="b" class="btn btn-default btn-outline rozmiar2" title="Pogrubienie"><span class="fa fa-bold"></span></a>
+      <a id="i" class="btn btn-default btn-outline rozmiar2" title="Kursywa"><span class="fa fa-italic"></span></a>
+      <a id="u" class="btn btn-default btn-outline rozmiar2" title="Podkreślenie"><span class="fa fa-underline"></span></a>
+      <a id="s" class="btn btn-default btn-outline rozmiar2" title="Przekreślenie"><span class="fa fa-strikethrough"></span></a>
+      <a class="btn btn-default btn-outline rozmiar2" href="http://www.emoji-cheat-sheet.com/" target="_blank" title="Dostępne emotikony"><span class="fa fa-smile-o"></span></a>
+    </div></li>
   </ul>
 <% end %>
 <% end %>

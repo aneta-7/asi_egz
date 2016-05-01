@@ -1,12 +1,11 @@
 ### Projekt zespołowy WYPOK
 1. Nazwa zespołu: ADHD
 
-2. Opis Projektu
-Aplikacja służąca do wstawiania odnośników.
+2. Opis Projektu:
+- Aplikacja służąca do wstawiania odnośników.
 Daje ona możliwość do oceniania oraz komentowania strony
-przez innych użytkowników. Zawiera ranking najlepszych stron
-według ocen użytkowników, liczona za pomocą wzoru do wyliczania
-wagi głosów.
+przez innych użytkowników oraz zwiera ranking stron
+na podstawie ocen użytkowników.
 
 3. Skład:
  - Monika Beiger
@@ -20,13 +19,13 @@ wagi głosów.
  - dodanie paginacji
  - wygląd strony 
  - wstawić sensowne odnośniki do stron
- - inne dodatki związane z dodawaniem komentarzy (pogrubienia, podkreślenia)
  - logowanie przez fecabooka lub inną witrynę
- - możliwośc dodania zdjęć, lub linków
+ - możliwośc dodania zdjęć i/lub linków
  - dodać sortowanie wg top, daty, tytułu
 
-5. Użycie wzoru do do wyliczania wagi głosów (+/-):
+5. Użycie wzoru do wyliczania wagi głosów (+/-):
 http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
+
 6. Informacje:
  
 |Wersja Ruby|Wersja Rails|Baza danych|
