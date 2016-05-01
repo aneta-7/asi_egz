@@ -12,6 +12,10 @@ class Link < ActiveRecord::Base
       ((phat + z*z/(2*n) - z * Math.sqrt((phat*(1-phat)+z*z/(4*n))/n))/(1+z*z/n)*100).round(2)
     end
     
-      validates :title, :url, presence: true
-      validates :url, format: { with: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)?/, message: "jest niewłaściwy" }
+  	def self.search(search)
+    		where("title LIKE ?", "%#{search}%") 
+  	end
+    
+    validates :title, :url, presence: true
+    validates :url, format: { with: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)?/, message: "jest niewłaściwy" }
 end
