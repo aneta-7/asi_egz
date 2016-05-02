@@ -79,14 +79,12 @@
 
 <h3 class="comments_title">
   <%= @link.comments.count %>
-  <% if @link.comments.count === 1 %>
-  komentarz
-  <% end %>
-  <% if @link.comments.count === 2 || @link.comments.count === 3 || @link.comments.count === 4 %>
-  komentarze
-  <% end %>
-  <% if @link.comments.count === 0 || @link.comments.count >= 5 %>
+  <% if @link.comments.count === 0 || @link.comments.count >= 5  %>
   komentarzy
+  <% elsif @link.comments.count === 1 %>
+  komentarz
+  <% else %>
+  komentarze
   <% end %>
 </h3>
 <div id="comments">

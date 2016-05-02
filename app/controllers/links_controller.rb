@@ -7,6 +7,12 @@ class LinksController < ApplicationController
   def index
     if params[:search]
        @links = Link.all.search(params[:search])
+    elsif params[:my]
+       @links = Link.all
+       @my = true
+    elsif params[:all]
+       @links = Link.all
+       @my = false
     else
        @links = Link.all
     end

@@ -7,7 +7,7 @@ Daje ona możliwość do oceniania oraz komentowania strony
 przez innych użytkowników oraz zwiera ranking stron
 na podstawie ocen użytkowników.
 
-3. Skład zespołu oraz wykonane zadanie:
+3. Skład zespołu oraz wykonane zadania:
  - Monika Beiger
  - Artur Koliński
  - Łukasz Mielewczyk
