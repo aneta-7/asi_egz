@@ -1,4 +1,29 @@
+<%= form_tag(links_path, :method => "get") do %>
+  <ul class="nav navbar-nav pull-left">
+    <li>
+      <div class="input-group">
+        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Wyszukaj" %>
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-default btn-outline"><span class="glyphicon glyphicon-search"></span></button>
+        </span>
+      </div>
+    </li>
+  </ul>
+<% end %>
+
+<ul class="nav navbar-nav pull-right">
+    <% if user_signed_in? %>
+      <% if @my %>
+        <li><div class = "przycisk"><%= link_to '', { :all => "view" }, class: "btn btn-default btn-outline glyphicon glyphicon-eye-open", title: "Pokaż wszystkie strony" %></div></li>
+      <% else %>
+        <li><div class = "przycisk"><%= link_to '', { :my => "view" }, class: "btn btn-default btn-outline glyphicon glyphicon-eye-close", title: "Pokaż moje strony" %></div></li>
+      <% end %>
+    <% end %>
+    <li><div class = "przycisk"><%= link_to '', hashtags_path, class: "btn btn-default btn-outline glyphicon glyphicon-tags", title: "Hasztagi" %></div></li>
+</ul>
+<br>
 <% @links.each do |link| %>
+  <% if link.user == current_user || !@my %>
   <div class="link row clearfix">
     <h2>
       <%= link_to link.title, link %> <%= link.ci_lower_bound(link.get_upvotes.size, link.get_upvotes.size+link.get_downvotes.size, 0.95) %>%<br>
@@ -6,20 +31,18 @@
     </h2>
 
     <div class="btn-group">
-      <a class="btn btn-default btn-sm" href="<%= link.url %>" target="_blank">Odwiedź link</a>
+      <a class="btn btn-default btn-sm btn-outline" href="<%= link.url %>" target="_blank">Odwiedź link</a>
       <% if user_signed_in? %>
-      <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-up"></span>
+      <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
+        <span class="glyphicon glyphicon-thumbs-up"></span>
         <%= link.get_upvotes.size %>
       <% end %>
-      <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-down"></span>
+      <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
+        <span class="glyphicon glyphicon-thumbs-down"></span>
         <%= link.get_downvotes.size %>
-      <% end %>
       <% end %>
     </div>
   </div>
+  <% end %>
+  <% end %>
 <% end %>
-
-
-	<%= link_to 'Hasztagi', hashtags_path, class: "btn btn-default" %>

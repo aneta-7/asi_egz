@@ -1,5 +1,8 @@
-<h1>Hasztagi</h1>
-<ul>
+<ul class="nav navbar-nav pull-right">
+    <li><div class = "przycisk"><%= link_to '', links_path, class: "btn btn-default btn-outline fa fa-reply ", title: "Wróć" %></div></li>
+</ul>
+<h1 class='text-center'>Hasztagi</h1>
+<ul class='hasztagi'>
 <% @hashtags.each do |hashtag| %>
   <li><%= link_to hashtag.name, hashtag_path(hashtag.name) %></li>
 <% end -%>

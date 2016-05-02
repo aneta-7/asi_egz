@@ -127,14 +127,59 @@
     color: #fff;
 }
 
-.prawo{
-    float: right;
+.rozmiar{
+    font-size: 20px;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
-.emoty{
+.rozmiar2{
     font-size: 20px;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 20%;
+}
+
+.przycisk{
+    padding: 0;
+}
+
+.menu{
+    margin-top: 15%;
+    margin-bottom: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.none-underline:link {
+	text-decoration: none;
+}
+
+.none-underline:visited {
+	text-decoration: none;
+}
+
+.none-underline:hover {
+	text-decoration: none;
+}
+
+.none-underline:active {
+	text-decoration: none;
+}
+
+.my-radius{
+	border-radius: 10px;
+}
+
+.hasztagi{
+	list-style-type: none;
+	margin-left: -5%;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.strike{
+    text-decoration: line-through;
 }

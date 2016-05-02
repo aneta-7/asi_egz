@@ -1,3 +1,32 @@
+<script>
+		$(document).ready(function()
+		{
+		    $("#b").click(function(){
+		      var text = document.getElementById("kom");
+		      text.value = text.value.substring(0, text.selectionStart) +
+		      '[b]'+text.value.substring(text.selectionStart, text.selectionEnd)+'[/b]'+text.value.substring(text.selectionEnd);
+        });
+        $("#i").click(function(){
+		      var text = document.getElementById("kom");
+		      text.value = text.value.substring(0, text.selectionStart) +
+		      '[i]'+text.value.substring(text.selectionStart, text.selectionEnd)+'[/i]'+text.value.substring(text.selectionEnd);
+        });
+        $("#u").click(function(){
+		      var text = document.getElementById("kom");
+		      text.value = text.value.substring(0, text.selectionStart) +
+		      '[u]'+text.value.substring(text.selectionStart, text.selectionEnd)+'[/u]'+text.value.substring(text.selectionEnd);
+        });
+          $("#s").click(function(){
+		      var text = document.getElementById("kom");
+		      text.value = text.value.substring(0, text.selectionStart) +
+		      '[s]'+text.value.substring(text.selectionStart, text.selectionEnd)+'[/s]'+text.value.substring(text.selectionEnd);
+        });
+		});
+	</script>
+<ul class="nav navbar-nav pull-right">
+    <li><div class = "przycisk"><%= link_to '', links_path, class: "btn btn-default btn-outline fa fa-reply ", title: "Wróć" %></div></li>
+</ul>
+
 <div class="page-header">
   <h1><a href="<%= @link.url %>", target="_blank"><%= @link.title %></a> <%= @link.ci_lower_bound(@link.get_upvotes.size, @link.get_upvotes.size+@link.get_downvotes.size, 0.95) %>% </br> <small>Przesłane przez: <%= @link.user.name %></small></h1>
 </div>
@@ -8,12 +37,12 @@
 
 <div class="btn-group pull-right">
   <% if user_signed_in? %>
-  <%= link_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
-    <span class="glyphicon glyphicon-chevron-up"></span>
+  <%= link_to like_link_path(@link), method: :put, class: "btn btn-default btn-sm btn-outline " do %>
+    <span class="glyphicon glyphicon-thumbs-up"></span>
     <%= @link.get_upvotes.size %>
   <% end %>
-  <%= link_to dislike_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
-    <span class="glyphicon glyphicon-chevron-down"></span>
+  <%= link_to dislike_link_path(@link), method: :put, class: "btn btn-default btn-sm btn-outline " do %>
+    <span class="glyphicon glyphicon-thumbs-down"></span>
     <%= @link.get_downvotes.size %>
   <% end %>
   <% end %>
@@ -21,8 +50,8 @@
 
 <% if @link.user == current_user -%>
 	<div class="btn-group">
-		<%= link_to 'Edytuj', edit_link_path(@link), class: "btn btn-default" %>
-		<%= link_to 'Usuń', @link, method: :delete, data: { confirm: 'Na pewno?' }, class: "btn btn-default" %>
+		<%= link_to '', edit_link_path(@link), class: "btn btn-default glyphicon glyphicon-pencil btn-outline", title: "Edytuj" %>
+		<%= link_to '', @link, method: :delete, data: { confirm: 'Na pewno?' }, class: "btn btn-default glyphicon glyphicon-trash btn-outline", title: "Usuń"  %>
 	</div>
 <% end %>
 
@@ -30,26 +59,32 @@
 </br></br></br>
 <%= simple_form_for [@link, Comment.new]  do |f| %>
   <div class="field">
-    <%= f.text_area :body, class: "form-control", required: true %>
+    <%= f.text_area :body, id: "kom", class: "form-control", required: true %>
   </div>
   <br>
-  <div>
-    <%= f.submit "Dodaj komentarz", class: "btn btn-primary" %>
-    <a class="btn btn-default emoty prawo" href="http://www.emoji-cheat-sheet.com/" target="_blank"><span class="fa fa-smile-o"></span></a>
-  </div>
+  <ul class="nav navbar-nav pull-left">
+    <li><%= f.submit "Dodaj komentarz", class: "btn btn-primary", title: "Dodaj komentarz" %></li>
+  </ul>
+  <ul class="nav navbar-nav pull-right">
+    <li><div class= "btn-group">
+      <a id="b" class="btn btn-default btn-outline rozmiar2" title="Pogrubienie"><span class="fa fa-bold"></span></a>
+      <a id="i" class="btn btn-default btn-outline rozmiar2" title="Kursywa"><span class="fa fa-italic"></span></a>
+      <a id="u" class="btn btn-default btn-outline rozmiar2" title="Podkreślenie"><span class="fa fa-underline"></span></a>
+      <a id="s" class="btn btn-default btn-outline rozmiar2" title="Przekreślenie"><span class="fa fa-strikethrough"></span></a>
+      <a class="btn btn-default btn-outline rozmiar2" href="http://www.emoji-cheat-sheet.com/" target="_blank" title="Dostępne emotikony"><span class="fa fa-smile-o"></span></a>
+    </div></li>
+  </ul>
 <% end %>
 <% end %>
 
 <h3 class="comments_title">
   <%= @link.comments.count %>
-  <% if @link.comments.count === 1 %>
-  komentarz
-  <% end %>
-  <% if @link.comments.count === 2 || @link.comments.count === 3 || @link.comments.count === 4 %>
-  komentarze
-  <% end %>
-  <% if @link.comments.count === 0 || @link.comments.count >= 5 %>
+  <% if @link.comments.count === 0 || @link.comments.count >= 5  %>
   komentarzy
+  <% elsif @link.comments.count === 1 %>
+  komentarz
+  <% else %>
+  komentarze
   <% end %>
 </h3>
 <div id="comments">
