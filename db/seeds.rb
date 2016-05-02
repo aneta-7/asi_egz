@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+50.times do
+  link = Link.new
+  link.title = Faker::Company.catch_phrase
+  link.url = Faker::Internet.url
+  link.user_id = 1
+  link.save
+end

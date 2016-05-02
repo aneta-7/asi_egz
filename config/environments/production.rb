@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.i18n.available_locales = :pl
+  config.i18n.available_locales = [:pl, :en]
   config.i18n.default_locale = :pl
   # Settings specified here will take precedence over those in config/application.rb.
   # Code is not reloaded between requests.

@@ -34,7 +34,7 @@ gem 'record_tag_helper', '~> 1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'faker'
+gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'will_paginate', '~> 3.1.0'
 gem 'statistics2'
 gem 'gemoji'
