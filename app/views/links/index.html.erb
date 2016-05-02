@@ -4,7 +4,7 @@
       <div class="input-group">
         <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Wyszukaj" %>
         <span class="input-group-btn">
-          <button type="submit" class="btn btn-default btn-outline"><span class="glyphicon glyphicon-search"></span></button>
+          <button type="submit" class="btn btn-default btn-outline", title="Wyszukaj" ><span class="glyphicon glyphicon-search"></span></button>
         </span>
       </div>
     </li>
@@ -12,37 +12,36 @@
 <% end %>
 
 <ul class="nav navbar-nav pull-right">
-    <% if user_signed_in? %>
-      <% if @my %>
-        <li><div class = "przycisk"><%= link_to '', { :all => "view" }, class: "btn btn-default btn-outline glyphicon glyphicon-eye-open", title: "Pokaż wszystkie strony" %></div></li>
-      <% else %>
-        <li><div class = "przycisk"><%= link_to '', { :my => "view" }, class: "btn btn-default btn-outline glyphicon glyphicon-eye-close", title: "Pokaż moje strony" %></div></li>
-      <% end %>
+  <% if user_signed_in? %>
+    <% if @my %>
+      <li><div class = "przycisk"><%= link_to '', { :all => "view" }, class: "btn btn-default btn-outline glyphicon glyphicon-eye-open", title: "Pokaż wszystkie strony" %></div></li>
+    <% else %>
+      <li><div class = "przycisk"><%= link_to '', { :my => "view" }, class: "btn btn-default btn-outline glyphicon glyphicon-eye-close", title: "Pokaż moje strony" %></div></li>
     <% end %>
-    <li><div class = "przycisk"><%= link_to '', hashtags_path, class: "btn btn-default btn-outline glyphicon glyphicon-tags", title: "Hasztagi" %></div></li>
+  <% end %>
+  <li><div class = "przycisk"><%= link_to '', hashtags_path, class: "btn btn-default btn-outline glyphicon glyphicon-tags", title: "Hasztagi" %></div></li>
 </ul>
 <br>
 <% @links.each do |link| %>
   <% if link.user == current_user || !@my %>
-  <div class="link row clearfix">
-    <h2>
-      <%= link_to link.title, link %> <%= link.ci_lower_bound(link.get_upvotes.size, link.get_upvotes.size+link.get_downvotes.size, 0.95) %>%<br>
-      <small class="author">Przesłane <%= time_ago_in_words(link.created_at) %> temu przez <%= link.user.name %></small>
-    </h2>
-
-    <div class="btn-group">
-      <a class="btn btn-default btn-sm btn-outline" href="<%= link.url %>" target="_blank">Odwiedź link</a>
-      <% if user_signed_in? %>
-      <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
-        <span class="glyphicon glyphicon-thumbs-up"></span>
-        <%= link.get_upvotes.size %>
-      <% end %>
-      <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
-        <span class="glyphicon glyphicon-thumbs-down"></span>
-        <%= link.get_downvotes.size %>
-      <% end %>
+    <div class="link row clearfix">
+      <h2>
+        <%= link_to link.title, link %> <%= link.ci_lower_bound(link.get_upvotes.size, link.get_upvotes.size+link.get_downvotes.size, 0.95) %>%<br>
+        <small class="author">Przesłane <%= time_ago_in_words(link.created_at) %> temu przez <%= link.user.name %></small>
+      </h2>
+      <div class="btn-group">
+        <a class="btn btn-default btn-sm btn-outline" href="<%= link.url %>" target="_blank" title="Odwiedź link">Odwiedź link</a>
+        <% if user_signed_in? %>
+          <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+            <%= link.get_upvotes.size %>
+          <% end %>
+          <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
+            <span class="glyphicon glyphicon-thumbs-down"></span>
+            <%= link.get_downvotes.size %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <% end %>
   <% end %>
 <% end %>

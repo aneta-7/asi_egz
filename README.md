@@ -18,7 +18,7 @@ na podstawie ocen użytkowników.
 4. Do poprawy i dodania:
  - dodanie paginacji
  - wygląd strony 
- - wstawić sensowne odnośniki do stron
+ - wstawić sensowne odnośniki do stron (miniaturki)
  - logowanie przez fecabooka lub inną witrynę
  - możliwośc dodania zdjęć i/lub linków
  - dodać sortowanie wg top, daty, tytułu

@@ -25,8 +25,10 @@
 	  </div>
 
 	  <div class="form-group">
-	  	<%= f.submit "Zarejestruj", class: "btn btn-lg btn-primary" %>
+	  	<%= f.submit "Zarejestruj", class: "btn btn-primary", title: "Zarejestruj" %>
 	  </div>
+	 
+  	<div class = "przycisk"><%= link_to '', links_path, class: "btn btn-default btn-outline fa fa-reply ", title: "Wróć" %></div>
 <% end %>
 
 <!-- <%= render "devise/shared/links" %> -->
