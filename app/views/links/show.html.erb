@@ -55,6 +55,16 @@
 	</div>
 <% end %>
 
+<% if !user_signed_in? %>
+    <% if @sd %>
+      <%  @sd = @link.comments.sort { |x,y| y <=> x } %>
+      <%= link_to '', { :sortDate => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-order", title: "Sortuj wg daty - rosnąco" %>
+    <% else %>
+      <%  @sd = @link.comments.sort { |x,y| x <=> y } %>
+      <%= link_to '', { :sortDate => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-order-alt", title: "Sortuj wg daty - malejąco" %>
+    <% end %>
+<% end %>
+
 <% if user_signed_in? %>
 </br></br></br>
 <%= simple_form_for [@link, Comment.new]  do |f| %>
