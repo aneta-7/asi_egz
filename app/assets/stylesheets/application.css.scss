@@ -61,8 +61,29 @@
 			}
 		}
 	}
+	
 }
 
+#emots {
+        font-weight: 900;
+}
+
+#emots ul{
+  width:1080px;
+  margin-bottom:20px;
+  overflow:hidden;
+  border-top:1px solid #ccc;
+  list-style-type: none;
+}
+
+#emots li{
+  line-height:1.5em;
+  border-bottom:1px solid #ccc;
+  float:left;
+  display:inline;
+  width:33%;
+}
+    
 .btn-circle {
   width: 30px;
   height: 30px;
