@@ -21,6 +21,13 @@ class LinksController < ApplicationController
   # GET /links/1
   # GET /links/1.json
   def show
+    if params[:sortDate]
+      if params[:sortDate] == "desc"
+        @sd = params[:sortDate];
+      else
+        @sd = false;
+      end
+    end
   end
 
   # GET /links/new

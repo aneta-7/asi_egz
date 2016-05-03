@@ -21,7 +21,6 @@ na podstawie ocen użytkowników.
  - wstawić sensowne odnośniki do stron (miniaturki)
  - logowanie przez fecabooka lub inną witrynę
  - możliwośc dodania zdjęć i/lub linków
- - dodać sortowanie wg top, daty, tytułu
 
 5. Użycie wzoru do wyliczania wagi głosów (+/-):
 http://www.evanmiller.org/how-not-to-sort-by-average-rating.html

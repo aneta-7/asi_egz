@@ -64,15 +64,25 @@
   <br>
   <ul class="nav navbar-nav pull-left">
     <li><%= f.submit "Dodaj komentarz", class: "btn btn-primary", title: "Dodaj komentarz" %></li>
+    <% if @sd %>
+      <%  @sd = @link.comments.sort { |x,y| y <=> x } %>
+      <%= link_to '', { :sortDate => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-order", title: "Sortuj wg daty - malejąco" %>
+    <% else %>
+      <%  @sd = @link.comments.sort { |x,y| x <=> y } %>
+      <%= link_to '', { :sortDate => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-order-alt", title: "Sortuj wg daty - roznąco" %>
+    <% end %>
+  </ul>
+  <ul class="nav navbar-nav pull-left">
+
   </ul>
   <ul class="nav navbar-nav pull-right">
-    <li><div class= "btn-group">
+    <div class= "btn-group">
       <a id="b" class="btn btn-default btn-outline rozmiar2" title="Pogrubienie"><span class="fa fa-bold"></span></a>
       <a id="i" class="btn btn-default btn-outline rozmiar2" title="Kursywa"><span class="fa fa-italic"></span></a>
       <a id="u" class="btn btn-default btn-outline rozmiar2" title="Podkreślenie"><span class="fa fa-underline"></span></a>
       <a id="s" class="btn btn-default btn-outline rozmiar2" title="Przekreślenie"><span class="fa fa-strikethrough"></span></a>
       <a class="btn btn-default btn-outline rozmiar2" href="http://www.emoji-cheat-sheet.com/" target="_blank" title="Dostępne emotikony"><span class="fa fa-smile-o"></span></a>
-    </div></li>
+    </div>
   </ul>
 <% end %>
 <% end %>
@@ -88,5 +98,5 @@
   <% end %>
 </h3>
 <div id="comments">
-  <%= render :partial => @link.comments %>
+  <%= render :partial => @sd %>
 </div>
