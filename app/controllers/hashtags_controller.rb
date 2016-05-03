@@ -1,8 +1,25 @@
 class HashtagsController < ApplicationController
 
   def index
-    @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| x.name <=> y.name }
-    #@hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| SimpleHashtag::Hashtag.find_by_name(y.name).hashtaggables.count <=> SimpleHashtag::Hashtag.find_by_name(x.name).hashtaggables.count }
+    if params[:sortName]
+      if params[:sortName] == "desc"
+        @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| y.name <=> x.name }
+        @sn = true;
+      else
+        @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| x.name <=> y.name }
+        @sn = false;
+      end
+    elsif params[:sortScore]
+      if params[:sortScore] == "desc"
+        @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| SimpleHashtag::Hashtag.find_by_name(y.name).hashtaggables.count <=> SimpleHashtag::Hashtag.find_by_name(x.name).hashtaggables.count }
+        @ss = true;
+      else
+        @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| SimpleHashtag::Hashtag.find_by_name(x.name).hashtaggables.count <=> SimpleHashtag::Hashtag.find_by_name(y.name).hashtaggables.count }
+        @ss = false;
+      end
+    else 
+      @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| x.name <=> y.name }
+    end
   end
 
   def show

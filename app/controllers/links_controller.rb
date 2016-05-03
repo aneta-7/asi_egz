@@ -23,7 +23,7 @@ class LinksController < ApplicationController
   def show
     if params[:sortDate]
       if params[:sortDate] == "desc"
-        @sd = params[:sortDate];
+        @sd = true;
       else
         @sd = false;
       end
