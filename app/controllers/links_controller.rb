@@ -1,44 +1,45 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  
+
   # GET /links
   # GET /links.json
   def index
+    links_paginated = @links = Link.paginate(page: params[:page], per_page: 10).order('created_at DESC')
     if params[:search]
-       @links = Link.all.search(params[:search])
+       @links = links_paginated.search(params[:search])
     elsif params[:my]
-       @links = Link.all
+       @links = links_paginated
        @my = true
     elsif params[:all]
-       @links = Link.all
+       @links = links_paginated
        @my = false
     elsif params[:sortDate]
       if params[:sortDate] == "desc"
-        @links= Link.all.sort { |x,y| y <=> x  }
+        @links= links_paginated.sort { |x,y| y <=> x  }
         @sd = true;
       else
-        @links= Link.all.sort { |x,y| x <=> y }
+        @links= links_paginated.sort { |x,y| x <=> y }
         @sd = false;
       end
     elsif params[:sortName]
       if params[:sortName] == "asc"
-        @links= Link.all.sort { |x,y| x.title <=> y.title  }
+        @links= links_paginated.sort { |x,y| x.title <=> y.title  }
         @sn = true;
       else
-        @links = Link.all.sort { |x,y| y.title <=> x.title  }
+        @links = links_paginated.sort { |x,y| y.title <=> x.title  }
         @sn = false;
       end
     elsif params[:sortScore]
       if params[:sortScore] == "desc"
-        @links = Link.all.sort { |x,y| y.ci_lower_bound(y.get_upvotes.size, y.get_upvotes.size+y.get_downvotes.size, 0.95) <=> x.ci_lower_bound(x.get_upvotes.size, x.get_upvotes.size+x.get_downvotes.size, 0.95) }
+        @links = links_paginated.sort { |x,y| y.ci_lower_bound(y.get_upvotes.size, y.get_upvotes.size+y.get_downvotes.size, 0.95) <=> x.ci_lower_bound(x.get_upvotes.size, x.get_upvotes.size+x.get_downvotes.size, 0.95) }
         @ss = true;
       else
-        @links = Link.all.sort { |x,y| x.ci_lower_bound(x.get_upvotes.size, x.get_upvotes.size+x.get_downvotes.size, 0.95) <=> y.ci_lower_bound(y.get_upvotes.size, y.get_upvotes.size+y.get_downvotes.size, 0.95) }
+        @links = links_paginated.sort { |x,y| x.ci_lower_bound(x.get_upvotes.size, x.get_upvotes.size+x.get_downvotes.size, 0.95) <=> y.ci_lower_bound(y.get_upvotes.size, y.get_upvotes.size+y.get_downvotes.size, 0.95) }
         @ss = false;
       end
     else
-       @links = Link.all
+       @links = links_paginated
     end
   end
 
@@ -104,7 +105,7 @@ class LinksController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def upvote
     @link = Link.find(params[:id])
     @link.upvote_by current_user
@@ -116,7 +117,7 @@ class LinksController < ApplicationController
     @link.downvote_from current_user
     redirect_to :back
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_link
@@ -127,5 +128,5 @@ class LinksController < ApplicationController
     def link_params
       params.require(:link).permit(:title, :url)
     end
-    
+
 end
