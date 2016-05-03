@@ -13,6 +13,30 @@ class LinksController < ApplicationController
     elsif params[:all]
        @links = Link.all
        @my = false
+    elsif params[:sortDate]
+      if params[:sortDate] == "desc"
+        @links= Link.all.sort { |x,y| y <=> x  }
+        @sd = true;
+      else
+        @links= Link.all.sort { |x,y| x <=> y }
+        @sd = false;
+      end
+    elsif params[:sortName]
+      if params[:sortName] == "asc"
+        @links= Link.all.sort { |x,y| x.title <=> y.title  }
+        @sn = true;
+      else
+        @links = Link.all.sort { |x,y| y.title <=> x.title  }
+        @sn = false;
+      end
+    elsif params[:sortScore]
+      if params[:sortScore] == "desc"
+        @links = Link.all.sort { |x,y| y.ci_lower_bound(y.get_upvotes.size, y.get_upvotes.size+y.get_downvotes.size, 0.95) <=> x.ci_lower_bound(x.get_upvotes.size, x.get_upvotes.size+x.get_downvotes.size, 0.95) }
+        @ss = true;
+      else
+        @links = Link.all.sort { |x,y| x.ci_lower_bound(x.get_upvotes.size, x.get_upvotes.size+x.get_downvotes.size, 0.95) <=> y.ci_lower_bound(y.get_upvotes.size, y.get_upvotes.size+y.get_downvotes.size, 0.95) }
+        @ss = false;
+      end
     else
        @links = Link.all
     end

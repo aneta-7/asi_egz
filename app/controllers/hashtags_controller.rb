@@ -2,11 +2,11 @@ class HashtagsController < ApplicationController
 
   def index
     if params[:sortName]
-      if params[:sortName] == "desc"
-        @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| y.name <=> x.name }
+      if params[:sortName] == "asc"
+        @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| x.name <=> y.name }
         @sn = true;
       else
-        @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| x.name <=> y.name }
+        @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| y.name <=> x.name }
         @sn = false;
       end
     elsif params[:sortScore]
@@ -18,6 +18,7 @@ class HashtagsController < ApplicationController
         @ss = false;
       end
     else 
+      @sn = true
       @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| x.name <=> y.name }
     end
   end

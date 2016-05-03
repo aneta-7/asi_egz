@@ -20,6 +20,23 @@
     <% end %>
   <% end %>
   <li><div class = "przycisk"><%= link_to '', hashtags_path, class: "btn btn-default btn-outline glyphicon glyphicon-tags", title: "Hasztagi" %></div></li>
+  <li><div class= "btn-group odstepL">
+    <% if @sd %>
+      <%= link_to '', { :sortDate => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-order", title: "Sortuj wg daty - rosnąco" %>
+    <% else %>
+      <%= link_to '', { :sortDate => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-order-alt", title: "Sortuj wg daty - malejąco" %>
+    <% end %>
+    <% if @sn %>
+      <%= link_to '', { :sortName => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-alphabet-alt", title: "Sortuj wg tytułu - malejąco" %>
+    <% else %>
+      <%= link_to '', { :sortName => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-alphabet", title: "Sortuj wg tytułu - rosnąco" %>
+    <% end %>
+    <% if @ss %>
+      <%= link_to '', { :sortScore => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-attributes", title: "Sortuj wg ilości rankingu- rosnąco" %>
+    <% else %>
+      <%= link_to '', { :sortScore => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-attributes-alt", title: "Sortuj wg rankingu - malejąco" %>
+    <% end %>
+  </div></li>
 </ul>
 <br>
 <% @links.each do |link| %>

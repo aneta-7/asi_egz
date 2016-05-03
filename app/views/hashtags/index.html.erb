@@ -5,14 +5,14 @@
   <ul class="nav navbar-nav pull-right">
     <div class= "btn-group">
       <% if @sn %>
-        <%= link_to '', { :sortName => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-alphabet", title: "Sortuj wg nazwy - malejąco" %>
+        <%= link_to '', { :sortName => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-alphabet-alt", title: "Sortuj wg nazwy - malejąco" %>
       <% else %>
-        <%= link_to '', { :sortName => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-alphabet-alt", title: "Sortuj wg nazwy - roznąco" %>
+        <%= link_to '', { :sortName => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-alphabet", title: "Sortuj wg nazwy - rosnąco" %>
       <% end %>
       <% if @ss %>
-        <%= link_to '', { :sortScore => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-attributes", title: "Sortuj wg ilości wystąpień - malejąco" %>
+        <%= link_to '', { :sortScore => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-attributes", title: "Sortuj wg ilości wystąpień - rosnąco" %>
       <% else %>
-        <%= link_to '', { :sortScore => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-attributes-alt", title: "Sortuj wg ilości wystąpień - roznąco" %>
+        <%= link_to '', { :sortScore => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-attributes-alt", title: "Sortuj wg ilości wystąpień - malejąco" %>
       <% end %>
     </div class>
   </ul>
