@@ -42,6 +42,7 @@ gem 'will_paginate-bootstrap', :git => 'https://github.com/bootstrap-ruby/will_p
 
 gem 'statistics2'
 gem 'gemoji'
+gem 'high_voltage'
 gem 'simple_hashtag'
 gem "font-awesome-rails"
 
