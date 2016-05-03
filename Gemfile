@@ -38,6 +38,7 @@ gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'will_paginate', '~> 3.1.0'
 gem 'statistics2'
 gem 'gemoji'
+gem 'high_voltage'
 gem 'simple_hashtag'
 gem "font-awesome-rails"
 
