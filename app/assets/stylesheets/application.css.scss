@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
- 
+
+ ul.nav li {
+   padding: 5px 5px 0px 5px;
+ }
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
@@ -32,6 +36,7 @@
 #main_content {
 	#content {
 		float: none;
+    width: 70%;
 	}
 	padding-bottom: 100px;
 	.link {

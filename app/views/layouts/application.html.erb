@@ -39,7 +39,7 @@
   </header>
 
 	<div id="main_content"> <!-- class="container" -->
-		<div class="container"> 
+		<div class="container">
 			<% flash.each do |name, msg| %>
 				<%= content_tag(:div, msg, class: "alert alert-info") %>
 			<% end %>
@@ -51,4 +51,18 @@
 		</div>
 	</div>
 </body>
+<script>
+  // $(function () {
+  //   if ($('#infinite-scrolling .pagination').size() > 0) {
+  //     $(window).on('scroll', function() {
+  //       var more_posts_url = $('.pagination .next a').attr('href');
+  //         if (more_posts_url && $(window).scrollTop() > $(document).height() - $(window).height() - 60) {
+  //           $('.pagination').html('<img src="<%= asset_path('ajax-loader.gif') %>" alt="Loading..." title="Loading..." />');
+  //           console.log(more_posts_url);
+  //           $.getScript(more_posts_url);
+  //         }
+  //     });
+  //   }
+  // });
+</script>
 </html>

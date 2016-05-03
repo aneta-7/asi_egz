@@ -35,7 +35,11 @@ gem 'record_tag_helper', '~> 1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'faker', '~> 1.6', '>= 1.6.3'
+
+# Pagination
 gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap', :git => 'https://github.com/bootstrap-ruby/will_paginate-bootstrap'
+
 gem 'statistics2'
 gem 'gemoji'
 gem 'simple_hashtag'
