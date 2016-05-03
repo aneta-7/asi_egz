@@ -5,7 +5,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    links_paginated = @links = Link.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+    links_paginated = Link.paginate(page: params[:page], per_page: 10).order('created_at DESC')
     if params[:search]
        @links = links_paginated.search(params[:search])
     elsif params[:my]
@@ -19,12 +19,12 @@ class LinksController < ApplicationController
         @links= links_paginated.sort { |x,y| y <=> x  }
         @sd = true;
       else
-        @links= links_paginated.sort { |x,y| x <=> y }
+        @links = links_paginated.sort { |x,y| x <=> y }
         @sd = false;
       end
     elsif params[:sortName]
       if params[:sortName] == "asc"
-        @links= links_paginated.sort { |x,y| x.title <=> y.title  }
+        @links = links_paginated.sort { |x,y| x.title <=> y.title  }
         @sn = true;
       else
         @links = links_paginated.sort { |x,y| y.title <=> x.title  }
@@ -40,6 +40,11 @@ class LinksController < ApplicationController
       end
     else
        @links = links_paginated
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

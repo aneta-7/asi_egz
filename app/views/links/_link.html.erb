@@ -1,0 +1,21 @@
+<% if link.user == current_user || !@my %>
+  <div class="link row clearfix">
+    <h2>
+      <%= link_to link.title, link %> <%= link.ci_lower_bound(link.get_upvotes.size, link.get_upvotes.size+link.get_downvotes.size, 0.95) %>%<br>
+      <small class="author">Przesłane <%= time_ago_in_words(link.created_at) %> temu przez <%= link.user.name %></small>
+    </h2>
+    <div class="btn-group">
+      <a class="btn btn-default btn-sm btn-outline" href="<%= link.url %>" target="_blank" title="Odwiedź link">Odwiedź link</a>
+      <% if user_signed_in? %>
+        <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          <%= link.get_upvotes.size %>
+        <% end %>
+        <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
+          <span class="glyphicon glyphicon-thumbs-down"></span>
+          <%= link.get_downvotes.size %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
