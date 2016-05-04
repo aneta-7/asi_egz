@@ -24,7 +24,7 @@
 		});
 	</script>
   <% begin %>
-    <% @object = LinkThumbnailer.generate(@link.url) %> 
+    <% @object = LinkThumbnailer.generate(@link.url) %>
     <% @e = false  %>
     <% rescue %>
       <% @e = true %>
@@ -107,15 +107,18 @@
 <% end %>
 
 <h3 class="comments_title">
-  <%= @link.comments.count %>
-  <% if @link.comments.count === 0 || @link.comments.count >= 5  %>
+  <%= @comments.count %>
+  <% if @comments.count === 0 || @comments.count >= 5  %>
   komentarzy
-  <% elsif @link.comments.count === 1 %>
+  <% elsif @comments.count === 1 %>
   komentarz
   <% else %>
   komentarze
   <% end %>
 </h3>
 <div id="comments">
-  <%= render :partial => @sd %>
+  <%= render :partial => @comments %>
+</div>
+<div id="infinite-scrolling">
+	<%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
 </div>

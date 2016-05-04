@@ -57,6 +57,11 @@ class LinksController < ApplicationController
         @sd = false;
       end
     end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /links/new
@@ -126,6 +131,7 @@ class LinksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_link
       @link = Link.find(params[:id])
+      @comments = @link.comments.paginate(page: params[:page], per_page: 10).order('created_at ASC')
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

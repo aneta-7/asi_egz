@@ -42,7 +42,7 @@
 <% @links.each do |link| %>
   <% if link.user == current_user || !@my %>
     <% begin %>
-      <% @object = LinkThumbnailer.generate(link.url) %> 
+      <% @object = LinkThumbnailer.generate(link.url) %>
       <% @e = false  %>
       <% rescue %>
         <% @e = true %>
