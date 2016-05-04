@@ -31,10 +31,10 @@ class LinksController < ApplicationController
       end
     elsif params[:sortScore]
       if params[:sortScore] == "desc"
-        @links = Link.all.paginate(page: params[:page], per_page: 10).order('((cached_votes_up + 1.9208) / (cached_votes_up + cached_votes_down) - 1.96 * ((cached_votes_up * cached_votes_down) / (cached_votes_up + cached_votes_down) + 0.9604) / (cached_votes_up + cached_votes_down)) / (1 + 3.8416 / (cached_votes_up + cached_votes_down)) DESC').where('cached_votes_up + cached_votes_down > 0')
+        @links = Link.all.paginate(page: params[:page], per_page: 10).order('((cached_votes_up + 1.9208) / (cached_votes_up + cached_votes_down) - 1.96 * ((cached_votes_up * cached_votes_down) / (cached_votes_up + cached_votes_down) + 0.9604) / (cached_votes_up + cached_votes_down)) / (1 + 3.8416 / (cached_votes_up + cached_votes_down)) DESC')
         @ss = true;
       else
-        @links = Link.all.paginate(page: params[:page], per_page: 10).order('((cached_votes_up + 1.9208) / (cached_votes_up + cached_votes_down) - 1.96 * ((cached_votes_up * cached_votes_down) / (cached_votes_up + cached_votes_down) + 0.9604) / (cached_votes_up + cached_votes_down)) / (1 + 3.8416 / (cached_votes_up + cached_votes_down)) ASC').where('cached_votes_up + cached_votes_down > 0')
+        @links = Link.all.paginate(page: params[:page], per_page: 10).order('((cached_votes_up + 1.9208) / (cached_votes_up + cached_votes_down) - 1.96 * ((cached_votes_up * cached_votes_down) / (cached_votes_up + cached_votes_down) + 0.9604) / (cached_votes_up + cached_votes_down)) / (1 + 3.8416 / (cached_votes_up + cached_votes_down)) ASC')
         @ss = false;
       end
     else
