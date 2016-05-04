@@ -57,10 +57,10 @@
 
 <% if !user_signed_in? %>
     <% if @sd %>
-      <%  @sd = @link.comments.sort { |x,y| y <=> x } %>
+      <%  @sd = @link.comments.order('body DESC') %>
       <%= link_to '', { :sortDate => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-order", title: "Sortuj wg daty - rosnąco" %>
     <% else %>
-      <%  @sd = @link.comments.sort { |x,y| x <=> y } %>
+      <%  @sd = @link.comments.order('body ASC') %>
       <%= link_to '', { :sortDate => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-order-alt", title: "Sortuj wg daty - malejąco" %>
     <% end %>
 <% end %>

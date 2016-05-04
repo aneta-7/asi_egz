@@ -5,41 +5,40 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    links_paginated = Link.paginate(page: params[:page], per_page: 10).order('created_at DESC')
     if params[:search]
-       @links = links_paginated.search(params[:search])
+       @links = Link.all.search(params[:search]).paginate(page: params[:page], per_page: 10)
     elsif params[:my]
-       @links = links_paginated
+       @links = Link.all.paginate(page: params[:page], per_page: 10)
        @my = true
     elsif params[:all]
-       @links = links_paginated
+       @links = Link.all.paginate(page: params[:page], per_page: 10)
        @my = false
     elsif params[:sortDate]
       if params[:sortDate] == "desc"
-        @links= links_paginated.sort { |x,y| y <=> x  }
+        @links= Link.all.paginate(page: params[:page], per_page: 10).order('created_at DESC')
         @sd = true;
       else
-        @links = links_paginated.sort { |x,y| x <=> y }
+        @links = Link.all.paginate(page: params[:page], per_page: 10).order('created_at ASC')
         @sd = false;
       end
     elsif params[:sortName]
       if params[:sortName] == "asc"
-        @links = links_paginated.sort { |x,y| x.title <=> y.title  }
+        @links = Link.all.paginate(page: params[:page], per_page: 10).order('title ASC')
         @sn = true;
       else
-        @links = links_paginated.sort { |x,y| y.title <=> x.title  }
+        @links = Link.all.paginate(page: params[:page], per_page: 10).order('title DESC')
         @sn = false;
       end
     elsif params[:sortScore]
       if params[:sortScore] == "desc"
-        @links = links_paginated.sort { |x,y| y.ci_lower_bound(y.get_upvotes.size, y.get_upvotes.size+y.get_downvotes.size, 0.95) <=> x.ci_lower_bound(x.get_upvotes.size, x.get_upvotes.size+x.get_downvotes.size, 0.95) }
+        @links = Link.all.paginate(page: params[:page], per_page: 10).order('((cached_votes_up + 1.9208) / (cached_votes_up + cached_votes_down) - 1.96 * ((cached_votes_up * cached_votes_down) / (cached_votes_up + cached_votes_down) + 0.9604) / (cached_votes_up + cached_votes_down)) / (1 + 3.8416 / (cached_votes_up + cached_votes_down)) DESC').where('cached_votes_up + cached_votes_down > 0')
         @ss = true;
       else
-        @links = links_paginated.sort { |x,y| x.ci_lower_bound(x.get_upvotes.size, x.get_upvotes.size+x.get_downvotes.size, 0.95) <=> y.ci_lower_bound(y.get_upvotes.size, y.get_upvotes.size+y.get_downvotes.size, 0.95) }
+        @links = Link.all.paginate(page: params[:page], per_page: 10).order('((cached_votes_up + 1.9208) / (cached_votes_up + cached_votes_down) - 1.96 * ((cached_votes_up * cached_votes_down) / (cached_votes_up + cached_votes_down) + 0.9604) / (cached_votes_up + cached_votes_down)) / (1 + 3.8416 / (cached_votes_up + cached_votes_down)) ASC').where('cached_votes_up + cached_votes_down > 0')
         @ss = false;
       end
     else
-       @links = links_paginated
+       @links = Link.all.paginate(page: params[:page], per_page: 10)
     end
 
     respond_to do |format|

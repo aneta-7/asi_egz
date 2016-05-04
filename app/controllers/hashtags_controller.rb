@@ -3,10 +3,10 @@ class HashtagsController < ApplicationController
   def index
     if params[:sortName]
       if params[:sortName] == "asc"
-        @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| x.name <=> y.name }
+        @hashtags = SimpleHashtag::Hashtag.all.order('name ASC')
         @sn = true;
       else
-        @hashtags = SimpleHashtag::Hashtag.all.sort { |x,y| y.name <=> x.name }
+        @hashtags = SimpleHashtag::Hashtag.all.order('name DESC')
         @sn = false;
       end
     elsif params[:sortScore]
