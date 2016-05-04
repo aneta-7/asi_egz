@@ -12,7 +12,10 @@ na podstawie ocen użytkowników.
  - Artur Koliński
  - Łukasz Mielewczyk
  - Jarosław Mokrzycki
- - Maciej Posłuszny
+ - Maciej Posłuszny:
+   - skrypt seeds.rb tworzący 10 użytkowników, z których każdy tworzy 10 linków na stronie
+   - infinite scrolling dla linków na stronie głównej oraz komentarzy w szczegółach linku (wykorzystano will_paginate + jQuery)
+   - drobne poprawki wizualne
  - Michał Tyczyński
  
 4. Do poprawy i dodania:
