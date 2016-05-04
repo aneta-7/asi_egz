@@ -41,11 +41,18 @@
 <br>
 <% @links.each do |link| %>
   <% if link.user == current_user || !@my %>
-    <% @object = LinkThumbnailer.generate(link.url) %>
+    <% begin %>
+      <% @object = LinkThumbnailer.generate(link.url) %> 
+      <% @e = false  %>
+      <% rescue %>
+        <% @e = true %>
+    <% end %>
     <div class="link row clearfix">
       <h2>
         <%= link_to link.title, link %> <%= link.ci_lower_bound(link.get_upvotes.size, link.get_upvotes.size+link.get_downvotes.size, 0.95) %>%<br>
-        <a href="<%= link.url %>" target="_blank" title="<%= link.title %>" ><img src="<%= @object.images.first.src.to_s %>" class="miniaturka" ></a></br>
+        <% if !@e && @object.images && @object.images.first %>
+          <a href="<%= link.url %>" target="_blank" title="<%= link.title %>" ><img src="<%= @object.images.first.src.to_s %>" class="miniaturka" ></a></br>
+        <% end %>
         <small class="author">Przesłane <%= time_ago_in_words(link.created_at) %> temu przez <%= link.user.name %></small>
       </h2>
       <div class="btn-group">

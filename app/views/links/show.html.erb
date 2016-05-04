@@ -23,14 +23,21 @@
         });
 		});
 	</script>
-<% @object = LinkThumbnailer.generate(@link.url) %>
+  <% begin %>
+    <% @object = LinkThumbnailer.generate(@link.url) %> 
+    <% @e = false  %>
+    <% rescue %>
+      <% @e = true %>
+  <% end %>
 <ul class="nav navbar-nav pull-right">
     <li><div class = "przycisk"><%= link_to '', links_path, class: "btn btn-default btn-outline fa fa-reply ", title: "Wróć" %></div></li>
 </ul>
 
 <div class="page-header">
   <h1><a href="<%= @link.url %>", target="_blank"><%= @link.title %></a> <%= @link.ci_lower_bound(@link.get_upvotes.size, @link.get_upvotes.size+@link.get_downvotes.size, 0.95) %>%</h1>
-  <a href="<%= @link.url %>" target="_blank" title="<%= @link.title %>" ><img src="<%= @object.images.first.src.to_s %>" class="miniaturka" ></a>
+  <% if !@e && @object.images && @object.images.first %>
+    <a href="<%= @link.url %>" target="_blank" title="<%= @link.title %>" ><img src="<%= @object.images.first.src.to_s %>" class="miniaturka" ></a>
+  <% end %>
   <h1><small>Przesłane przez: <%= @link.user.name %></small></h1>
 </div>
 
