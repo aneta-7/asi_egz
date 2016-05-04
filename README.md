@@ -8,7 +8,7 @@ przez innych użytkowników oraz zwiera ranking stron
 na podstawie ocen użytkowników.
 
 3. Skład zespołu oraz wykonane zadania:
- - Monika Beiger
+ - Monika Beiger: Testowanie działania poprawności aplikacji oraz naprawa ewentualnych błędów również, bądź poinformowanie pozostałych członków zespołu o ewentualnych nieprawidłowościach.
  - Artur Koliński
  - Łukasz Mielewczyk
  - Jarosław Mokrzycki
