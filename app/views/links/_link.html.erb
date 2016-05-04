@@ -1,11 +1,25 @@
 <% if link.user == current_user || !@my %>
+  <% begin %>
+    <% @object = LinkThumbnailer.generate(link.url) %> 
+    <% @e = false  %>
+    <% rescue %>
+      <% @e = true %>
+  <% end %>
   <div class="link row clearfix">
     <h2>
       <%= link_to link.title, link %> <%= link.ci_lower_bound(link.get_upvotes.size, link.get_upvotes.size+link.get_downvotes.size, 0.95) %>%<br>
+      <% if !@e && @object.images && @object.images.first %>
+        <a href="<%= link.url %>" target="_blank" title="<%= link.title %>" ><img src="<%= @object.images.first.src.to_s %>" class="miniaturka" ></a></br>
+      <% else %>
+        <a href="<%= link.url %>" target="_blank" title="<%= link.title %>" ><img src="http://s10.ifotos.pl/img/brakzdjec_sapeppe.gif" class="miniaturka" ></a></br>
+      <% end %>
       <small class="author">Przesłane <%= time_ago_in_words(link.created_at) %> temu przez <%= link.user.name %></small>
     </h2>
     <div class="btn-group">
       <a class="btn btn-default btn-sm btn-outline" href="<%= link.url %>" target="_blank" title="Odwiedź link">Odwiedź link</a>
+      <%= link_to link, class: "btn btn-default btn-sm btn-outline", title: "Komentarze" do %>
+        <span class="glyphicon glyphicon-comment"></span>
+      <% end %>
       <% if user_signed_in? %>
         <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm btn-outline" do %>
           <span class="glyphicon glyphicon-thumbs-up"></span>

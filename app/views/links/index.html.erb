@@ -53,7 +53,7 @@
         <% if !@e && @object.images && @object.images.first %>
           <a href="<%= link.url %>" target="_blank" title="<%= link.title %>" ><img src="<%= @object.images.first.src.to_s %>" class="miniaturka" ></a></br>
         <% else %>
-          <a href="http://s10.ifotos.pl/img/brakzdjec_sapeppe.gif" target="_blank" title="<%= link.title %>" ><img src="<%= @object.images.first.src.to_s %>" class="miniaturka" ></a></br>
+          <a href="<%= link.url %>" target="_blank" title="<%= link.title %>" ><img src="http://s10.ifotos.pl/img/brakzdjec_sapeppe.gif" class="miniaturka" ></a></br>
         <% end %>
         <small class="author">Przesłane <%= time_ago_in_words(link.created_at) %> temu przez <%= link.user.name %></small>
       </h2>
