@@ -45,6 +45,7 @@ gem 'gemoji'
 gem 'high_voltage'
 gem 'simple_hashtag'
 gem "font-awesome-rails"
+gem 'link_thumbnailer'
 
 group :development, :test do
   gem 'byebug'

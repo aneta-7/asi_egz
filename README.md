@@ -16,7 +16,6 @@ na podstawie ocen użytkowników.
  - Michał Tyczyński
  
 4. Do poprawy i dodania:
- - wstawić sensowne odnośniki do stron (miniaturki)
  - logowanie przez fecabooka lub inną witrynę
  - możliwośc dodania zdjęć i/lub linków
 
