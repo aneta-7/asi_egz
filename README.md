@@ -2,10 +2,7 @@
 1. Nazwa zespołu: ADHD
 
 2. Opis Projektu:
- - Aplikacja służąca do wstawiania odnośników.
-Daje ona możliwość do oceniania oraz komentowania strony
-przez innych użytkowników oraz zwiera ranking stron
-na podstawie ocen użytkowników.
+Aplikacja daje użytkownikowi możliwość wstawiania linków do strony oraz ocenianie i komentowanie ich przez innych użytkowników. Komentarze dają użytkownikowi możliwość dodawania emotikonów, oraz pogrubienia, ustawienia kursywym, podkreślenia, skreślenia tekstu, a nawet dodanie hasztagów a następnie wyszukina odpowiedniego komentarza na podstawie hasztagu. Użytkownik ma również możliwość wyszukania odpowiedniej strony według tytułu. Wartość strony jest przedstawiona w procentach, na podstawie głosów użytkowników przy pomocy wzoru Evana Millera. Użytkonik oczywiście może usunąć, tworzyć oraz modyfikować konto.
 
 3. Skład zespołu oraz wykonane zadania:
  - Monika Beiger: 
