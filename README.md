@@ -56,7 +56,6 @@ na podstawie ocen użytkowników.
     - dodanie wyglądu bootstarpa
     - stworzenie relacji komentarzy, użytkowników i linków
     - wygenerowanie możliwości logowania się oraz modyfokacji konta
-    - 
 
 4. Użycie wzoru do wyliczania wagi głosów (+/-):
 http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
