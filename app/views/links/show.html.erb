@@ -69,10 +69,8 @@
 
 <% if !user_signed_in? %>
     <% if @sd %>
-      <%  @sd = @link.comments.order('created_at DESC') %>
       <%= link_to '', { :sortDate => "asc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-order", title: "Sortuj wg daty - rosnąco" %>
     <% else %>
-      <%  @sd = @link.comments.order('created_at ASC') %>
       <%= link_to '', { :sortDate => "desc" }, class: "btn btn-default btn-outline rozmiar3 glyphicon glyphicon-sort-by-order-alt", title: "Sortuj wg daty - malejąco" %>
     <% end %>
 <% end %>
@@ -120,5 +118,5 @@
   <%= render :partial => @comments %>
 </div>
 <div id="infinite-scrolling">
-	<%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
+	   <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
 </div>

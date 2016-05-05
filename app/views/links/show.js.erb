@@ -1,7 +1,7 @@
 console.log('show.js.erb links');
-$('#content').append('<%= j render @comments %>');
+$('#content').append('<div id="comments"><%= j render @comments %></div>');
 <% if @comments.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate @comments, renderer: BootstrapPagination::Rails %>');
+  $('.pagination').replaceWith('<%= j will_paginate @comments, renderer: BootstrapPagination::Rails, id: comments %>');
 <% else %>
   $(window).off('scroll');
   $('.pagination').remove();

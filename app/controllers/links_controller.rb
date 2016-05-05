@@ -51,10 +51,13 @@ class LinksController < ApplicationController
   # GET /links/1.json
   def show
     if params[:sortDate]
+      @link = Link.find(params[:id])
       if params[:sortDate] == "desc"
         @sd = true;
+        @comments = @link.comments.paginate(page: params[:page], per_page: 10).order('created_at DESC')
       else
         @sd = false;
+        @comments = @link.comments.paginate(page: params[:page], per_page: 10).order('created_at ASC')
       end
     end
 
