@@ -13,7 +13,14 @@ na podstawie ocen użytkowników.
     - naprawa ewentualnych błędów również, bądź poinformowanie pozostałych członków zespołu o ewentualnych nieprawidłowościach
     - spolszczenie komunikatów tyczących logowania
     - wzbogacenie strony o elementy graficzne (ikonki)
- - Artur Koliński
+ - Artur Koliński:
+   - pomysł na projekt
+    - pomysł na elemnty projetu
+    - dodanie emotikonów
+    - dodanie spisu emotikonów
+    - dodanie działających linków bezpośrednich
+    - zarządzanie pracami nad projektem
+    - kontroler sprawdzający tekst komentarzy, zamieniający na emotikony
  - Łukasz Mielewczyk:
    - naprawa trudniejszych błędów
     - spolszczenie komunikatów
@@ -28,12 +35,24 @@ na podstawie ocen użytkowników.
     - utworzenie możliwości usuwania kaskadowego danych
     - poprawa funcjonalności działania strony
     - poprawa wyglądu strony (styl css)
- - Jarosław Mokrzycki
+ - Jarosław Mokrzycki:
+   - pomoc przy tworzeniu regexów
+    - znalezieniu wzoru służącego do wyliczania wartości głosów
+    - dodanie hasztagów (wstępnych)
+    - spolszczenie hasztagów
+    - testowanie hasztagów
+    - odpowiadalność wygląd pliku README
+    - dodanie opisu programu
+    - dodanie danych przykłądowych
  - Maciej Posłuszny:
    - skrypt seeds.rb tworzący 10 użytkowników, z których każdy tworzy 10 linków na stronie
     - infinite scrolling dla linków na stronie głównej oraz komentarzy w szczegółach linku (wykorzystano will_paginate + will_paginate_bootstrap + jQuery)
     - drobne poprawki wizualne
  - Michał Tyczyński
+   - stworzenie szkielety aplikacji
+    - wygenerowanie potrzebnych modeli
+    - wygenerowanie potrzebnych kontrolerów
+    - drobne poprawki wizualne
 
 4. Użycie wzoru do wyliczania wagi głosów (+/-):
 http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
