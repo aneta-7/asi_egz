@@ -14,19 +14,20 @@ na podstawie ocen użytkowników.
     - spolszczenie komunikatów tyczących logowania
     - wzbogacenie strony o elementy graficzne (ikonki)
  - Artur Koliński
- - Łukasz Mielewczyk
+ - Łukasz Mielewczyk:
    - naprawa trudniejszych błędów
     - spolszczenie komunikatów
     - dodanie możliwości sortowania
     - poprawienie funcjonalności hasztagów
-    - dodanie miniaturek stron
+    - dodanie miniaturek dodanych linków
     - dodanie wyszukiwarki
-    - stworzenie procedury wyliczającą wagę głosów
+    - stworzenie procedury wyliczającą wartość głosów
     - dodanie możliwości pogrubienia, podkreślenia itp. komentarzy
-    - dodanie walidacji
+    - dodanie walidacji danych
     - dodanie bazy MongoDB
     - utworzenie możliwości usuwania kaskadowego danych
     - poprawa funcjonalności działania strony
+    - poprawa wyglądu strony (styl css)
  - Jarosław Mokrzycki
  - Maciej Posłuszny:
    - skrypt seeds.rb tworzący 10 użytkowników, z których każdy tworzy 10 linków na stronie
