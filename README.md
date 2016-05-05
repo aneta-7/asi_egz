@@ -12,23 +12,32 @@ na podstawie ocen użytkowników.
    - testowanie działania poprawności aplikacji
     - naprawa ewentualnych błędów również, bądź poinformowanie pozostałych członków zespołu o ewentualnych nieprawidłowościach
     - spolszczenie komunikatów tyczących logowania
+    - wzbogacenie strony o elementy graficzne (ikonki)
  - Artur Koliński
  - Łukasz Mielewczyk
+   - naprawa trudniejszych błędów
+    - spolszczenie komunikatów
+    - dodanie możliwości sortowania
+    - poprawienie funcjonalności hasztagów
+    - dodanie miniaturek stron
+    - dodanie wyszukiwarki
+    - stworzenie procedury wyliczającą wagę głosów
+    - dodanie możliwości pogrubienia, podkreślenia itp. komentarzy
+    - dodanie walidacji
+    - dodanie bazy MongoDB
+    - utworzenie możliwości usuwania kaskadowego danych
+    - poprawa funcjonalności działania strony
  - Jarosław Mokrzycki
  - Maciej Posłuszny:
    - skrypt seeds.rb tworzący 10 użytkowników, z których każdy tworzy 10 linków na stronie
     - infinite scrolling dla linków na stronie głównej oraz komentarzy w szczegółach linku (wykorzystano will_paginate + will_paginate_bootstrap + jQuery)
     - drobne poprawki wizualne
  - Michał Tyczyński
- 
-4. Do poprawy i dodania:
- - logowanie przez fecabooka lub inną witrynę
- - możliwośc dodania zdjęć i/lub linków
 
-5. Użycie wzoru do wyliczania wagi głosów (+/-):
+4. Użycie wzoru do wyliczania wagi głosów (+/-):
 http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
 
-6. Informacje:
+5. Informacje:
  
 |Wersja Ruby|Wersja Rails|Baza danych|
 |---|---|---|
