@@ -48,11 +48,15 @@ na podstawie ocen użytkowników.
    - skrypt seeds.rb tworzący 10 użytkowników, z których każdy tworzy 10 linków na stronie
     - infinite scrolling dla linków na stronie głównej oraz komentarzy w szczegółach linku (wykorzystano will_paginate + will_paginate_bootstrap + jQuery)
     - drobne poprawki wizualne
- - Michał Tyczyński
+ - Michał Tyczyński:
    - stworzenie szkielety aplikacji
-    - wygenerowanie potrzebnych modeli
-    - wygenerowanie potrzebnych kontrolerów
-    - drobne poprawki wizualne
+    - wygenerowanie potrzebnych modeli (komentarze, linki, użytkownicy)
+    - wygenerowanie potrzebnych kontrolerów (komentarze, linki, użytkownicy)
+    - dodanie możliwości głosowania (+/-)
+    - dodanie wyglądu bootstarpa
+    - stworzenie relacji komentarzy, użytkowników i linków
+    - wygenerowanie możliwości logowania się oraz modyfokacji konta
+    - 
 
 4. Użycie wzoru do wyliczania wagi głosów (+/-):
 http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
