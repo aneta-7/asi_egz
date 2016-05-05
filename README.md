@@ -37,25 +37,29 @@ na podstawie ocen użytkowników.
     - poprawa wyglądu strony (styl css)
  - Jarosław Mokrzycki:
    - pomoc przy tworzeniu regexów
-    - znalezieniu wzoru służącego do wyliczania wartości głosów
+    - znalezienie wzoru służącego do wyliczania wartości głosów
     - dodanie hasztagów (wstępnych)
     - spolszczenie hasztagów
     - testowanie hasztagów
-    - odpowiadalność wygląd pliku README
+    - odpowiedzialność za wygląd pliku README
     - dodanie opisu programu
-    - dodanie danych przykłądowych
+    - dodanie danych przykładowych
  - Maciej Posłuszny:
-   - skrypt seeds.rb tworzący 10 użytkowników, z których każdy tworzy 10 linków na stronie
-    - infinite scrolling dla linków na stronie głównej oraz komentarzy w szczegółach linku (wykorzystano will_paginate + will_paginate_bootstrap + jQuery)
+   - skrypt seeds.rb tworzący 10 użytkowników, z których każdy tworzy 10 linków na stronie za pomocą gemu Faker
+    - infinite scrolling dla linków na stronie głównej oraz komentarzy w szczegółach linku:
+      - gem will_paginate
+      - gem will_paginate_bootstrap
+      - jQuery + AJAX
+      - obsługa żądań JavaScript-owych w kontrolerze (links)
     - drobne poprawki wizualne
  - Michał Tyczyński:
-   - stworzenie szkielety aplikacji
+   - stworzenie szkieletu aplikacji
     - wygenerowanie potrzebnych modeli (komentarze, linki, użytkownicy)
     - wygenerowanie potrzebnych kontrolerów (komentarze, linki, użytkownicy)
     - dodanie możliwości głosowania (+/-)
     - dodanie wyglądu bootstarpa
-    - stworzenie relacji komentarzy, użytkowników i linków
-    - wygenerowanie możliwości logowania się oraz modyfokacji konta
+    - stworzenie relacji pomiędzy komentarzami, użytkownikami i linkami
+    - wygenerowanie możliwości logowania się oraz modyfikacji konta
 
 4. Użycie wzoru do wyliczania wagi głosów (+/-):
 http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
